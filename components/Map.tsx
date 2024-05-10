@@ -5,7 +5,8 @@ import { MapContainer, Marker, TileLayer, Popup } from "react-leaflet";
 import MarkerIcon from "../node_modules/leaflet/dist/images/marker-icon.png";
 import MarkerShadow from "../node_modules/leaflet/dist/images/marker-shadow.png";
 import "leaflet/dist/leaflet.css";
-import custom from "./custom";
+import { CenterButton } from "./centerMap";
+import Head from "next/head";
 
 export default function Map() {
 	return (
@@ -14,7 +15,7 @@ export default function Map() {
 				height: "100vh",
 				width: "100%",
 			}}
-			center={[51.505, -0.09]}
+			center={[-41.4718, -72.9396]}
 			zoom={13}
 			scrollWheelZoom={false}>
 			<Marker
@@ -28,13 +29,14 @@ export default function Map() {
 						shadowUrl: MarkerShadow.src,
 					})
 				}
-				position={[51.505, -0.09]}>
+				position={[-41.4718, -72.9396]}>
 				<Popup>este es un popup y puedo poner el html que quiera</Popup>
 			</Marker>
 			<TileLayer
 				attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 				url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 			/>
+			<CenterButton />
 		</MapContainer>
 	);
 }
