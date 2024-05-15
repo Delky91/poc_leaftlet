@@ -127,7 +127,7 @@ const Map2 = () => {
 			// añadir control de capas para activar y desactivar
 			let control = L.control.layers(null, overlayMaps).addTo(mapInstance.current);
 
-			// POC LECTURA KMZ/KML/SHP
+			// // POC LECTURA KMZ/KML/SHP
 			const options = {
 				button: document.getElementById("input-btn"),
 			};
