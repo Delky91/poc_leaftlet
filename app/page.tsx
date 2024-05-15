@@ -1,18 +1,20 @@
-"use client";
 import Script from "next/script";
 import Head from "next/head";
 import L from "leaflet";
+import dynamic from "next/dynamic";
+import Map2 from "@/components/Map2";
 
-// const DynamicMap = dynamic(() => import("../components/Map"), {
-// 	ssr: false,
-// });
+const DynamicMap = dynamic(() => import("../components/Map"), {
+	ssr: false,
+});
 
 export default function Home() {
 	// converter();
 	return (
 		<>
+			<Map2 />
 			{/* <DynamicMap /> */}
-			<Head>
+			{/* <Head>
 				<link
 					rel='stylesheet'
 					href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css'
@@ -47,7 +49,7 @@ export default function Home() {
 							attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 						}).addTo(map);
 						`}
-			</Script>
+			</Script> */}
 		</>
 	);
 }
